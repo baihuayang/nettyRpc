@@ -28,7 +28,12 @@ public class RPCServerHandler extends ChannelHandlerAdapter {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("client connected...");
+        System.out.println("client connected ...");
+    }
+
+    @Override
+    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("client exit ... ");
     }
 
     //    ChannelFuture f = ctx.writeAndFlush(new UnixTime());
